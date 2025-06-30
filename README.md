@@ -1,2 +1,2 @@
 # terceiro-repositorio2
-Repositório criado para fins educativos e educacionais
+Repositório criado para estudos de linguagem de programação JavaScript, para criação de senhas seguras.
