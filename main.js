@@ -43,29 +43,29 @@ function geraSenha() {
     if (checkbox[2].checked){
         alfabeto = alfabeto + numeros;
     }
-    if (checkbox[0].checked){
+    if (checkbox[3].checked){
         alfabeto = alfabeto + simbolos;
     }
     
-    let senha= '' ;
+    let senha = '' ;
     for(let i=0; i < tamanhoSenha; i++) {
         let numeroAleatorio = Math.random()*alfabeto.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
         senha = senha + alfabeto[numeroAleatorio];
     }
-    campoSenha.value = senha; 
+    campoSenha.value = senha;
     classificaSenha(alfabeto.length);
 }
 
 function classificaSenha(tamanhoAlfabeto) {
-    let entropia = tamanhoSenha*Math.log2(alfabeto.length);
-    console.log(entropia)
-    forcaSenha classList.remove('fraca', 'media', 'forte');
+    let entropia = tamanhoSenha*Math.log2(tamanhoAlfabeto);
+    console.log(entropia);
+    forcaSenha.classList.remove('fraca', 'media', 'forte');
     if (entropia > 57){
         forcaSenha.classList.add('forte');
     } else if (entropia > 35 && entropia < 57) {
         forcaSenha.classList.add('media');
-    } else if (entropia<= 35){
+    } else if (entropia <= 35){
         forcaSenha.classList.add('fraca');
     }
     const valorEntropia = document.querySelector('.entropia');
